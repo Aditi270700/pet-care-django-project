@@ -1,0 +1,152 @@
+{% load static %}
+
+{% block css %}
+<style>
+
+.nav{
+background-color:brown;
+height:80px;
+}
+.nav ul{
+display:flex;
+justify-content:space-evenly;
+color:white;
+font-size:25px;
+list-style:none;
+font-family:Arial, sans-serif;
+text-decoration:none;
+}
+.nav ul li{
+margin-top:20px;
+}
+.nav ul li a{
+color:white;
+text-decoration:none;
+}
+.im{
+width:100%;
+height:450px;
+}
+h1{
+margin-top:200px;
+text-align:center;
+font-family:Arial, sans-serif;
+font-weight:600px;
+}
+.animal1{
+width:300px;
+height:350px;
+}
+.ani{
+margin-top:50px;
+display:flex;
+gap:30px;
+margin-left:15%;
+}
+.footer{
+height:300px;
+margin-top:60px;
+display:flex;
+justify-content:space-evenly;
+background-color:rgb(196,164,132);
+}
+.foot{
+margin-top:50px;
+}
+.foot h2{
+font-family:Arial, sans-serif;
+}
+.foot li{
+list-style:none;
+font-family:Arial, sans-serif;
+font-size:18px;
+line-height:30px;
+}
+.book{
+font-weight:800px;
+font-size:18px;
+border:solid;
+border-color:skyblue;
+background-color:skyblue;
+text-align:center;
+padding-top:15px;
+padding-bottom:15px;
+}
+.shop{
+font-weight:900px;
+font-size:19px;
+font-family:Arial, sans-serif;  
+color:white;
+text-decoration:none;
+}
+</style>
+{% endblock css %}
+
+{% block content %}
+<div class=navbar>
+<div class=nav>
+<ul>
+<li><a href={% url 'base' %}>Home</a></li>
+<li><a href={% url 'booking' %}>Booking</a></li>
+<li><a href={% url 'logout' %}>Logout</a></li>
+<li><a href={% url 'detail' %}>Detail</a></li>
+</ul>
+</div>
+</div>
+</div class=ani>
+<div class=im>
+<img src="{% static 'images/animal8.jpg' %}" width="100%" height="650px">
+</div>
+<br>
+<h1>PET CARE ANIMALS</h1>
+<div class=ani>
+<div class=animal>
+<img src="{% static 'images/amimal1.jpg' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+<div class=animal>
+<img src="{% static 'images/aminal2.jpg' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+<div class=animal>
+<img src="{% static 'images/aminal3.webp' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+</div>
+<div class=ani>
+<div class=animal>
+<img src="{% static 'images/aminal4.jpg' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+<div class=animal>
+<img src="{% static 'images/aminal5.jpg' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+<div class=animal>
+<img src="{% static 'images/aminal6.jpg' %}" width="300px" height="350px">
+<div class=book><a href={% url 'booking' %} class=shop>Shop Now</a></div>
+</div>
+</div>
+{% comment %} Footer {% endcomment %}
+<div class=footer>
+<div class=foot>
+<h2>Contact Us</h2>
+<li>1234 Diwi St #1000</li>
+<li>8794561230</li>
+<li>hello@divipetsupplyshop.com</li>
+</div>
+<div class=foot>
+<h2>Opening hours</h2>
+<li>Mon-fri 10am-8pm</li>
+<li>Sat: 10am-4pm</li>
+<li>Sun: 10am-6pm</li>
+</div>
+<div class=foot>
+<h2>Customer service</h2>
+<li>Shipping & Returns</li>
+<li>Store Policy</li>
+<li>FAQ</li>
+</div>
+</div>
+{% endblock content %}
+

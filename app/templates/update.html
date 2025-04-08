@@ -1,0 +1,76 @@
+<style>
+form {
+    width: 350px;
+    margin: 100px auto; 
+    padding: 20px;
+    background-color:rgb(196,164,132);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[readonly] {
+    background-color: #f5f5f5;
+    color: #666;
+}
+
+input[type="submit"] {
+    width: 100%;
+    background-color:brown;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+
+
+h3 {
+    text-align: center;
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 30px;
+    font-family:Arial, sans-serif;
+}
+.sign{
+background-image: url('/static/images/animal10.jpg');
+background-size:cover;
+background-repeat: no-repeat;
+height:800px;
+}
+
+</style>
+
+ {%load static%}
+
+
+  {% if data4 %} 
+
+<center>
+<div class="sign">
+<h3>Update Table</h3>
+<form action="{% url 'update' pk=data4.id %}" method="post" enctype="multipart/form-data"> 
+    {% csrf_token %} 
+   <input type="text" name="name" value="{{data4.name}}"><br>
+   <input type="email" name="email" value="{{data4.email}}" readonly><br>
+   <input type="number" name="phone" value="{{data4.phone}}"><br>
+   <input type="text" name="password" value="{{data4.password}}"><br>
+   <input type="submit" value="Update">
+ </form>
+ </div>
+</center>
+ {% endif %}   

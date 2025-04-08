@@ -1,0 +1,114 @@
+<style>
+.nav{
+background-color:maroon;
+height:80px;
+
+}
+.nav ul{
+display:flex;
+justify-content:space-evenly;
+color:white;
+font-size:25px;
+list-style:none;
+font-family:Arial, sans-serif;
+}
+
+.nav ul li{
+margin-top:20px;
+}
+
+.nav ul li a{
+text-decoration:none;
+color:white;
+}
+
+
+table {
+    width: 60%;
+    border-collapse: collapse;
+    margin: 100px 0;
+    font-size: 18px;
+    text-align: left;
+}
+
+th, td {
+    padding: 12px;
+    border: 2px solid #ddd;
+}
+
+th {
+    background-color:brown;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color:rgb(196,164,132);
+}
+tr:nth-child(odd) {
+    background-color:rgb(246, 222, 198);
+}
+
+
+td a {
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+}
+
+td a[href*="update"] {
+    background-color:maroon;
+    color: white;
+    padding: 5px 10px;
+}
+
+td a[href*="delete"] {
+    background-color: rgb(232, 166, 105);
+    color: white;
+    padding: 5px 10px;
+}
+
+td a:hover {
+    opacity: 0.8;
+}
+.sign{
+background-image:url("../static/images/animal10.jpg");
+background-repeat: no-repeat;
+background-size:cover;
+width: 100%;
+height:700px;
+}
+</style>
+<div class=sign>
+<div class=nav>
+<ul>
+<li><a href={% url 'base' %}>Home</a></li>
+<li><a href={% url 'booking' %}>Booking</a></li>
+<li><a href={% url 'logout' %}>Logout</a></li>
+<li><a href={% url 'detail' %}>Detail</a></li>
+</ul>
+</div>
+<center>
+<table border='2'>
+<tr>
+<th>S.No</th>
+<th>Student Name</th>
+<th>Student Email</th>
+<th>Student Contact</th>
+<th>Student password</th>
+<th>Edit</th>
+<th>Delete</th>
+</tr>
+</div>
+{% for i in data %}
+<tr>
+<td>{{forloop.counter}}</td>
+<td>{{i.name}}</td>
+<td>{{i.email}}</td>
+<td>{{i.phone}}</td>
+<td>{{i.password}}</td>
+<td><a href="{% url 'update' pk=i.id%}">Edit</a></td>
+<td><a href="{% url 'delete' pk=i.id %}">Delete</a></td>
+</tr>
+{% endfor %}
+</table>
+</center>
